@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "game-city", "game-city\game-city.njsproj", "{B8CD9037-3438-421F-87D9-DD4DD4A94E1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torchbearer", "Torchbearer\Torchbearer.csproj", "{96C146D9-069F-4273-B845-F63D6373EA10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8CD9037-3438-421F-87D9-DD4DD4A94E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8CD9037-3438-421F-87D9-DD4DD4A94E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8CD9037-3438-421F-87D9-DD4DD4A94E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8CD9037-3438-421F-87D9-DD4DD4A94E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C146D9-069F-4273-B845-F63D6373EA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C146D9-069F-4273-B845-F63D6373EA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C146D9-069F-4273-B845-F63D6373EA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C146D9-069F-4273-B845-F63D6373EA10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2788A0E-6BB2-4D1A-AF53-65F8D4D44DD5}
+	EndGlobalSection
+EndGlobal
