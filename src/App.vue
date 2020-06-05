@@ -48,6 +48,8 @@
     .top-bar {
         padding: 10px 0;
         margin: auto 50px;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .menu-items {
@@ -61,6 +63,10 @@
         margin: auto 0px;
         white-space: nowrap;
     }
+
+        .header-link:hover {
+            color: lightgrey !important;
+        }
 
     .home-link {
         position: relative;
