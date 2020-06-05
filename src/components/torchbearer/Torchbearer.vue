@@ -1,18 +1,21 @@
 <template>
-    <div class="torchbearer">
-        <h1>Torchbearer</h1>
-        <div class="torchbearer-content">
-            <h2>Torchbearer Skills</h2>
-            <table>
-                <tbody>
-                    <tr v-for="skillView in skills" :key="skillView.skill.id">
-                        <td class="skill-name">{{ skillView.skill.name }}</td>
-                        <td>{{ skillView.suggestedHelpSkills }}</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div>
+        <div class="torchbearer" v-if="skills.length">
+            <h1>Torchbearer</h1>
+            <div class="torchbearer-content">
+                <h2>Torchbearer Skills</h2>
+                <table>
+                    <tbody>
+                        <tr v-for="skillView in skills" :key="skillView.skill.id">
+                            <td class="skill-name">{{ skillView.skill.name }}</td>
+                            <td>{{ skillView.suggestedHelpSkills }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-            <Loader/>
+        <Loader v-else/>
     </div>
 </template>
 
