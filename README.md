@@ -11,10 +11,10 @@ Visual Studio Code - https://code.visualstudio.com/
 Node js - https://nodejs.org/en/download/
 
 Once all that is installed run
-'''
+```
 npm install -g @vue/cli
 npm update -g @vue/cli
-'''
+```
 
 In visual studio code install the "Vetur" extension
 
