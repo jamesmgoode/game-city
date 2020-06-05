@@ -2,10 +2,12 @@
     <div id="app">
         <header>
             <div class="top-bar">
-                <a href="/" class="header-link home-link">Game City</a>
-                <a href="/torchbearer" class="header-link menu-link">Torchbearer</a>
-                <a href="/nineIsles" class="header-link menu-link">Nine Isles</a>
-                <a href="/union" class="header-link menu-link">Union LARP</a>
+                <router-link to="/" class="header-link home-link">Game City</router-link>
+                <div class="menu-items">
+                    <router-link to="/torchbearer" class="header-link top-link">Torchbearer</router-link>
+                    <router-link to="/nineIsles" class="header-link top-link">Nine Isles</router-link>
+                    <router-link to="/union" class="header-link top-link">Union LARP</router-link>
+                </div>
             </div>
         </header>
         <main>
@@ -39,20 +41,25 @@
     }
 
     header {
-        height: 56px;
+        height: auto;
         background-color: #222;
     }
 
     .top-bar {
-        padding-top: 10px;
+        padding: 10px 0;
         margin: auto 50px;
     }
 
+    .menu-items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .header-link {
-        color: #9d9d9d;
+        color: #9d9d9d !important;
         text-decoration: none !important;
         margin: auto 0px;
-        float: left;
+        white-space: nowrap;
     }
 
     .home-link {
@@ -62,7 +69,7 @@
         margin-right: 30px;
     }
 
-    .menu-link {
+    .top-link {
         line-height: 35px;
         margin-right: 20px;
         font-weight: bold;
