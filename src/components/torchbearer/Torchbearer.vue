@@ -12,14 +12,17 @@
                 </tbody>
             </table>
         </div>
+            <Loader/>
     </div>
 </template>
 
 <script>
     import * as axios from 'axios';
+    import Loader from '../Loader';
 
     export default {
         name: 'Torchbearer',
+        components: {Loader},
         data() {
             return {
                 skills: []
