@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 // eslint-disable-next-line no-unused-vars
-import { SkillData } from "../../models/skill-data";
+import { SkillData } from "../../services/torchbearer/models/skill-data";
 
 @Component
 export default class SkillTable extends Vue {
@@ -21,7 +21,7 @@ export default class SkillTable extends Vue {
 </script>
 
 <style scoped>
-  .skill-name {
-    font-weight: bold;
-  }
+.skill-name {
+  font-weight: bold;
+}
 </style>
