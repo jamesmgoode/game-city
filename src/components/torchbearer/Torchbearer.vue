@@ -20,12 +20,12 @@
 </template>
 
 <script lang="ts">
-import axios from "axios";
 import Loader from "../Loader.vue";
 import SkillTable from "./SkillTable.vue";
 import { Component, Vue } from "vue-property-decorator";
 // eslint-disable-next-line no-unused-vars
-import { SkillData } from "../../models/skill-data";
+import { SkillData } from "../../services/torchbearer/models/skill-data";
+import { torchbearerService } from "../../services/torchbearer/torchbearer.service";
 
 @Component({
   components: { Loader, SkillTable },
@@ -34,16 +34,16 @@ export default class Torchbearer extends Vue {
   skills: SkillData[] = [];
 
   mounted() {
-    axios
-      .get("https://www.unionlarp.co.uk/torchbearer/gettorchbearerskills")
-      .then((response) => (this.skills = response.data));
+    torchbearerService
+      .getSkillsData()
+      .then((response) => (this.skills = response.data as SkillData[]));
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .torchbearer-content {
-    text-align: left;
-    }
+.torchbearer-content {
+  text-align: left;
+}
 </style>
