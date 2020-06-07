@@ -1,13 +1,14 @@
 <template>
-  <div class="row" v-on:click="helpIsHidden = !helpIsHidden">
+  <div class="row" v-on:click="toggleHelp()">
     <td class="skill-name col-2">{{ skillData.skill.name }}</td>
-    <td class="skill-description col-10">
+    <td class="skill-description col-9">
       <p>{{ skillData.skill.quickDescription }}</p>
       <p v-if="!helpIsHidden">
         <b>Suggested Help:</b>
         {{ skillData.suggestedHelpSkills.join(", ") }}
       </p>
     </td>
+    <td class="col-1">{{ beginnersLuck }}</td>
   </div>
 </template>
 
@@ -19,7 +20,20 @@ import { SkillData } from "../../services/torchbearer/models/skill-data";
 @Component
 export default class SkillRow extends Vue {
   @Prop() skillData!: SkillData;
-  @Prop() helpIsHidden: boolean = true;
+
+  helpIsHidden: boolean = true;
+
+  private toggleHelp(){
+    this.helpIsHidden = !this.helpIsHidden;
+  }
+
+  get beginnersLuck() {
+    if (this.skillData.skill.beginnersLuckHealth) {
+      return "H";
+    } else {
+      return "W";
+    }
+  }
 }
 </script>
 
