@@ -4,14 +4,6 @@
       <h1>Torchbearer</h1>
       <div class="torchbearer-content">
         <h2>Torchbearer Skills</h2>
-        <!-- <table>
-                    <tbody>
-                        <tr v-for="skillView in skills" :key="skillView.skill.id">
-                            <td class="skill-name">{{ skillView.skill.name }}</td>
-                            <td>{{ skillView.suggestedHelpSkills }}</td>
-                        </tr>
-                    </tbody>
-                </table> -->
         <SkillTable v-bind:skills="skills" />
       </div>
     </div>
@@ -28,7 +20,7 @@ import { SkillData } from "../../services/torchbearer/models/skill-data";
 import { torchbearerService } from "../../services/torchbearer/torchbearer.service";
 
 @Component({
-  components: { Loader, SkillTable },
+  components: { Loader, SkillTable }
 })
 export default class Torchbearer extends Vue {
   skills: SkillData[] = [];
@@ -36,7 +28,7 @@ export default class Torchbearer extends Vue {
   mounted() {
     torchbearerService
       .getSkillsData()
-      .then((response) => (this.skills = response.data as SkillData[]));
+      .then(response => (this.skills = response.data as SkillData[]));
   }
 }
 </script>
