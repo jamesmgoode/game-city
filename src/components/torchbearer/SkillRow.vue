@@ -5,7 +5,7 @@
       <p>{{ skillData.skill.quickDescription }}</p>
       <p v-if="!helpIsHidden">
         <b>Suggested Help:</b>
-        {{ skillData.suggestedHelpSkills.join(", ") }}
+        {{ suggestedHelpSkillsList }}
       </p>
     </td>
     <td class="col-1">{{ beginnersLuck }}</td>
@@ -23,11 +23,15 @@ export default class SkillRow extends Vue {
 
   helpIsHidden: boolean = true;
 
-  private toggleHelp(){
+  private toggleHelp(): void {
     this.helpIsHidden = !this.helpIsHidden;
   }
 
-  get beginnersLuck() {
+  get suggestedHelpSkillsList(): String {
+    return this.skillData.suggestedHelpSkills.join(", ");
+  }
+
+  get beginnersLuck(): String {
     if (this.skillData.skill.beginnersLuckHealth) {
       return "H";
     } else {
