@@ -3,5 +3,6 @@ export enum ResearchType {
     Culture = "Culture",
     Economic = "Economic",
     Faith = "Faith",
+    Magic = "Magic",
     Military = "Military"
 }

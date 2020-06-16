@@ -84,6 +84,22 @@
       </tbody>
     </table>
     <br />
+    <h3>Magic</h3>
+    <table class="table nine-isles-table">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-3">Name</th>
+          <th class="col-5">Description</th>
+          <th class="col-1">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="research in researchByType('Magic')" :key="research.Name">
+          <ResearchRow v-bind:researchData="research" />
+        </tr>
+      </tbody>
+    </table>
+    <br />
     <h3>Military</h3>
     <table class="table nine-isles-table">
       <thead>
