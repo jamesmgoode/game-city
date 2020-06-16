@@ -3,7 +3,7 @@ import axios from "axios";
 class TorchbearerService {
   apiUrl: string = "https://www.unionlarp.co.uk/torchbearer";
 
-  constructor() {}
+  constructor() { }
 
   getSkillsData() {
     return axios.get(`${this.apiUrl}/gettorchbearerskills`);
