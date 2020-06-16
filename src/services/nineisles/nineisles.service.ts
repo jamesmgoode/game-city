@@ -161,6 +161,12 @@ class NineIslesService {
                     "Description": "Damage 3 bows",
                     "Type": ResearchType.Military,
                     "Level": 1
+                },
+                {
+                    "Name": "Crop Rotation",
+                    "Description": "+0.1 farm efficiency",
+                    "Type": ResearchType.Economic,
+                    "Level": 1
                 }
             ]
         };
