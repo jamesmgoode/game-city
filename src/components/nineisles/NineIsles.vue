@@ -3,7 +3,7 @@
     <h1>Nine Isles</h1>
     <h2>Aviasta</h2>
     <h3>Buildings</h3>
-    <table class="table buildings-table">
+    <table class="table nine-isles-table">
       <thead>
         <tr class="d-flex">
           <th class="col-3">Name</th>
@@ -15,6 +15,87 @@
       <tbody>
         <tr v-for="building in sortedBuildings" :key="building.Name">
           <BuildingRow v-bind:buildingData="building" />
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h2>Research</h2>
+    <h3>Civic</h3>
+    <table class="table nine-isles-table">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-3">Name</th>
+          <th class="col-5">Description</th>
+          <th class="col-1">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="research in researchByType('Civic')" :key="research.Name">
+          <ResearchRow v-bind:researchData="research" />
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>Culture</h3>
+    <table class="table nine-isles-table">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-3">Name</th>
+          <th class="col-5">Description</th>
+          <th class="col-1">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="research in researchByType('Culture')" :key="research.Name">
+          <ResearchRow v-bind:researchData="research" />
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>Economic</h3>
+    <table class="table nine-isles-table">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-3">Name</th>
+          <th class="col-5">Description</th>
+          <th class="col-1">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="research in researchByType('Economic')" :key="research.Name">
+          <ResearchRow v-bind:researchData="research" />
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>Faith</h3>
+    <table class="table nine-isles-table">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-3">Name</th>
+          <th class="col-5">Description</th>
+          <th class="col-1">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="research in researchByType('Faith')" :key="research.Name">
+          <ResearchRow v-bind:researchData="research" />
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>Military</h3>
+    <table class="table nine-isles-table">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-3">Name</th>
+          <th class="col-5">Description</th>
+          <th class="col-1">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="research in researchByType('Military')" :key="research.Name">
+          <ResearchRow v-bind:researchData="research" />
         </tr>
       </tbody>
     </table>
@@ -30,8 +111,10 @@ import BuildingRow from "./BuildingRow.vue";
 import { Building } from "../../services/nineisles/models/building";
 // eslint-disable-next-line no-unused-vars
 import { Research } from "../../services/nineisles/models/research";
+import { ResearchType } from "../../services/nineisles/models/research-type";
+import ResearchRow from "./ResearchRow.vue";
 
-@Component({ components: { BuildingRow } })
+@Component({ components: { BuildingRow, ResearchRow } })
 export default class NineIsles extends Vue {
   buildingData: Building[] = [
     {
@@ -123,10 +206,27 @@ export default class NineIsles extends Vue {
   researchData: Research[] = [
     {
       Name: "Mills",
-      Description: "",
+      Description: "May build Mills which improve Farm efficiency by +0.2",
+      Type: ResearchType.Economic,
+      Level: 1
+    },
+    {
+      Name: "Wind Pony Riding",
+      Description: "Ride Wind Ponies",
+      Type: ResearchType.Military,
+      Level: 1
+    },
+    {
+      Name: "Archery",
+      Description: "Damage 3 bows",
+      Type: ResearchType.Military,
       Level: 1
     }
   ];
+
+  researchByType(type: string): Research[] {
+    return this.researchData.filter(research => research.Type.toString() == type).sort((a, b) => (a.Name > b.Name ? 1 : -1));
+  }
 
   get sortedResearch(): Research[] {
     return this.researchData.sort((a, b) => (a.Name > b.Name ? 1 : -1));
@@ -140,7 +240,7 @@ h3 {
   text-align: left;
 }
 
-.buildings-table {
+.nine-isles-table {
   margin: 10px;
 }
 
