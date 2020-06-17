@@ -41,7 +41,6 @@ export default class NineIsles extends Vue {
 
   get researchTypes(): string[] {
     var researchTypes = this.nineIslesData.researchData.map(r => r.researchType);
-    //return [...new Set(researchTypes)];
     return researchTypes.filter((r, i) => researchTypes.indexOf(r) === i).sort((a, b) => (a > b ? 1 : -1));
   }
 }
