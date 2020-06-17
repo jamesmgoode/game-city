@@ -5,7 +5,7 @@
       <thead>
         <tr class="d-flex">
           <th class="col-3">Name</th>
-          <th class="col-5">Description</th>
+          <th class="col-8">Description</th>
           <th class="col-1">Level</th>
         </tr>
       </thead>
@@ -29,11 +29,11 @@ export default class ResearchView extends Vue {
   @Prop() researchData!: Research[];
 
   get sortedResearch(): Research[] {
-    return this.researchData.sort((a, b) => (a.Name > b.Name ? 1 : -1));
+    return this.researchData.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
 
   get type(): string {
-      return this.researchData[0].Type.toString();
+      return this.researchData[0].type;
   }
 }
 </script>

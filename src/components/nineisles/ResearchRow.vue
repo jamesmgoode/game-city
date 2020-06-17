@@ -1,15 +1,15 @@
 <template>
   <div class="d-flex">
-    <td class="col-3">{{ researchDatum.Name }}</td>
-    <td class="col-5">{{ researchDatum.Description }}</td>
-    <td class="col-1">{{ researchDatum.Level }}</td>
+    <td class="col-3">{{ researchDatum.name }}</td>
+    <td class="col-8">{{ researchDatum.description }}</td>
+    <td class="col-1">{{ researchDatum.level }}</td>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 // eslint-disable-next-line no-unused-vars
-import { Research } from '../../services/nineisles/models/research';
+import { Research } from "../../services/nineisles/models/research";
 
 @Component
 export default class ResearchRow extends Vue {

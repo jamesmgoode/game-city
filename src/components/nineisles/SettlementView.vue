@@ -6,7 +6,7 @@
       <thead>
         <tr class="d-flex">
           <th class="col-3">Name</th>
-          <th class="col-5">Description</th>
+          <th class="col-6">Description</th>
           <th class="col-1">BP</th>
           <th class="col-2">Workers</th>
         </tr>
@@ -17,6 +17,7 @@
         </tr>
       </tbody>
     </table>
+    <br />
   </div>
 </template>
 
@@ -33,11 +34,11 @@ export default class SettlementView extends Vue {
   @Prop() settlement!: Settlement;
 
   get name(): string {
-    return this.settlement?.Name;
+    return this.settlement?.name;
   }
 
   get sortedBuildings(): Building[] {
-    return this.settlement?.Buildings.sort((a, b) => (a.Name > b.Name ? 1 : -1));
+    return this.settlement?.buildings.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
 }
 </script>

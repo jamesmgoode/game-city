@@ -1,6 +1,6 @@
 export interface Building {
-    Name: string,
-    Description: string,
-    BuildPoints: number,
-    WorkersRequired: number
+    name: string,
+    description: string,
+    buildPoints: number,
+    workersRequired: number
 }

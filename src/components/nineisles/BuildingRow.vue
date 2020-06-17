@@ -1,9 +1,9 @@
 <template>
   <div class="d-flex">
-    <td class="col-3">{{ buildingData.Name }}</td>
-    <td class="col-5">{{ buildingData.Description }}</td>
-    <td class="col-1">{{ buildingData.BuildPoints }}</td>
-    <td class="col-2">{{ buildingData.WorkersRequired }}</td>
+    <td class="col-3">{{ buildingData.name }}</td>
+    <td class="col-6">{{ buildingData.description }}</td>
+    <td class="col-1">{{ buildingData.buildPoints }}</td>
+    <td class="col-2">{{ buildingData.workersRequired }}</td>
   </div>
 </template>
 
