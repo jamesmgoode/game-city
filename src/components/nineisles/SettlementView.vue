@@ -34,11 +34,11 @@ export default class SettlementView extends Vue {
   @Prop() settlement!: Settlement;
 
   get name(): string {
-    return this.settlement?.name;
+    return this.settlement.name;
   }
 
   get sortedBuildings(): Building[] {
-    return this.settlement?.buildings.sort((a, b) => (a.name > b.name ? 1 : -1));
+    return this.settlement.buildings.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
 }
 </script>

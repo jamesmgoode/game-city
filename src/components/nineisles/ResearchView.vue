@@ -33,7 +33,7 @@ export default class ResearchView extends Vue {
   }
 
   get type(): string {
-      return this.researchData[0].type;
+      return this.researchData[0].researchType;
   }
 }
 </script>

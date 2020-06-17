@@ -36,12 +36,13 @@ export default class NineIsles extends Vue {
   }
 
   researchByType(type: string): Research[] {
-    return this.nineIslesData.researchData.filter(r => r.type == type);
+    return this.nineIslesData.researchData.filter(r => r.researchType == type);
   }
 
   get researchTypes(): string[] {
-    var researchTypes = this.nineIslesData.researchData.map(r => r.type);
-    return researchTypes.filter((r, i) => researchTypes.indexOf(r) === i);
+    var researchTypes = this.nineIslesData.researchData.map(r => r.researchType);
+    //return [...new Set(researchTypes)];
+    return researchTypes.filter((r, i) => researchTypes.indexOf(r) === i).sort((a, b) => (a > b ? 1 : -1));
   }
 }
 </script>

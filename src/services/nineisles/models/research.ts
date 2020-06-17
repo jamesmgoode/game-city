@@ -1,6 +1,6 @@
 export interface Research {
     name: string,
     description: string,
-    type: string,
+    researchType: string,
     level: number
 }
