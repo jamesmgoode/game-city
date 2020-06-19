@@ -8,6 +8,10 @@ class NineIslesService {
     getNineIslesData() {
         return axios.get(`${this.apiUrl}/getnineislesdata`);
     }
+
+    getAllResearch(){
+        return axios.get(`${this.apiUrl}/getallresearch`);
+    }
 }
 
 export const nineIslesService = new NineIslesService();

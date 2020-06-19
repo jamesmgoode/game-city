@@ -29,7 +29,7 @@ export default class ResearchView extends Vue {
   @Prop() researchData!: Research[];
 
   get sortedResearch(): Research[] {
-    return this.researchData.sort((a, b) => (a.name > b.name ? 1 : -1));
+    return this.researchData.sort((a, b) => (a.level == b.level ? (a.name > b.name ? 1 : -1) : (a.level > b.level ? 1 : -1)));
   }
 
   get type(): string {

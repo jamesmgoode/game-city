@@ -5,7 +5,7 @@
         <router-link to="/" class="header-link home-link">Game City</router-link>
         <div class="menu-items">
           <router-link to="/torchbearer" class="header-link top-link">Torchbearer</router-link>
-          <router-link to="/nineIsles" class="header-link top-link">Nine Isles</router-link>
+          <router-link to="/nineisles" class="header-link top-link">Nine Isles</router-link>
           <router-link to="/union" class="header-link top-link">Union LARP</router-link>
         </div>
       </div>
