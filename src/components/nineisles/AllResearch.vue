@@ -20,7 +20,7 @@ import ResearchView from "./ResearchView.vue";
 
 @Component({ components: { Loader, ResearchView } })
 export default class AllResearch extends Vue {
-    researches: Research[] = [];
+  researches: Research[] = [];
 
   mounted() {
     nineIslesService
@@ -33,12 +33,13 @@ export default class AllResearch extends Vue {
   }
 
   get researchTypes(): string[] {
-    var researchTypes = this.researches.map(
-      r => r.researchType
+    var researchTypes = this.researches.map(r => r.researchType);
+    var distinctResearchTypes = new Set(researchTypes);
+    var sortedResearchTypes = Array.from(distinctResearchTypes).sort((a, b) =>
+      a > b ? 1 : -1
     );
-    return researchTypes
-      .filter((r, i) => researchTypes.indexOf(r) === i)
-      .sort((a, b) => (a > b ? 1 : -1));
+
+    return sortedResearchTypes;
   }
 }
 </script>
